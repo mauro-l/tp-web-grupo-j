@@ -11,13 +11,29 @@ namespace WebPromo
 {
     public partial class Default1 : System.Web.UI.Page
     {
-        public List<Articulo> ListaArticulo { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
-            ArticuloNegocio negocio = new ArticuloNegocio();
-            ListaArticulo = negocio.Listar();
-            RepeaterArt.DataSource = ListaArticulo;
-            RepeaterArt.DataBind();
+            
+        }
+
+        protected void btnValidar_Click(object sender, EventArgs e)
+        {
+            string codigo = TextBoxCode.Text;
+            VoucherNegocio voucher = new VoucherNegocio();
+            Vouchers voucherExistente = new Vouchers();
+            
+            voucherExistente = voucher.comparar(codigo);
+            if (voucherExistente == null)
+            {
+                LabelCodeValidator.Text = "segui participando mi rei";
+            } else if (voucherExistente.FechaCanje != null)
+            {
+                LabelCodeValidator.Text = "es correcto";
+            }
+            else
+            {
+                LabelCodeValidator.Text = "te durmieron el code perri";
+            }
         }
     }
 }

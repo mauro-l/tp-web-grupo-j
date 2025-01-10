@@ -29,9 +29,9 @@ namespace negocio
                 {
                     Vouchers voucher = new Vouchers();
                     voucher.CodigoVoucher = (string)datos.Reader["CodigoVoucher"];
-                    voucher.IdCliente = (int)datos.Reader["idCliente"];
-                    voucher.FechaCanje = (DateTime)datos.Reader["fechaCanje"];
-                    voucher.IdArticulo = (int)datos.Reader["IdArticulo"];
+                    voucher.IdCliente = datos.Reader["IdCliente"] as int?;
+                    voucher.FechaCanje = datos.Reader["FechaCanje"] as DateTime?;
+                    voucher.IdArticulo = datos.Reader["IdArticulo"] as int?;
                     vouchers.Add(voucher);
                 }
 
