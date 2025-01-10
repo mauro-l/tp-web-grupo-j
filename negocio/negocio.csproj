@@ -42,10 +42,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ArticuloNegocio.cs" />
-    <Compile Include="Datos.cs" />
+    <Compile Include="ClienteNegocio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VoucherNegocio.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\C#\Intensivo\datos\datos.csproj">
+      <Project>{f8f744b5-c8f5-41c7-8dc5-cb6b889c51ce}</Project>
+      <Name>datos</Name>
+    </ProjectReference>
     <ProjectReference Include="..\domino\domino.csproj">
       <Project>{98754DA7-BF4B-406E-9A8C-ADC968289FC6}</Project>
       <Name>domino</Name>
