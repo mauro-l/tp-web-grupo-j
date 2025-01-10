@@ -54,15 +54,8 @@ namespace negocio
 
                 return lista;
             }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex);
-                throw ex;
-            }
-            finally
-            {
-                datos.cerrarConexion();
-            }
+            catch (Exception ex) { throw ex; }
+            finally { datos.cerrarConexion(); }
         }
     }
 }

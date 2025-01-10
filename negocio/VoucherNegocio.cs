@@ -62,10 +62,11 @@ namespace negocio
             finally { datos.cerrarConexion(); }
         }
 
-        public bool comparar(string userCode)
+        public Vouchers comparar(string userCode)
         {
             List<Vouchers> listaVoucher = Listar();
-            return listaVoucher.Any(voucher => voucher.CodigoVoucher == userCode);
+            return listaVoucher.FirstOrDefault(voucher => voucher.CodigoVoucher.Equals(userCode));
         }
+        
     }
 }
