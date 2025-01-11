@@ -1,18 +1,28 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="Premios.aspx.cs" Inherits="WebPromo.Premios" %>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder3" runat="server">
-    <asp:Repeater ID="RepeaterArt" runat="server">
-        <ItemTemplate>
-            <div class="card" style="width: 18rem;">
-                <img src="<%#Eval("UrlImagen") %>" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title"><%#Eval("Nombre") %></h5>
-                    <blockquote class="blockquote mb-0">
-                        <p class="card-text"><%#Eval("Descripcion") %></p>
-                        <footer class="blockquote-footer">$<cite title="Source Title"><%#Eval("Precio") %></cite></footer>
-                    </blockquote>
-                </div>
-            </div>
-        </ItemTemplate>
-    </asp:Repeater>
+    <div class="col-10 d-flex flex-column justify-content-center mx-auto gap-2">
+
+
+        <div class="container d-flex justify-content-evenly p-4">
+            <asp:Repeater ID="RepeaterArt" runat="server">
+                <ItemTemplate>
+                    <div class="card" style="width: 18rem;">
+                        <div class="h-50 p-1 text-center">
+                            <img src="<%#Eval("UrlImagen") %>" class="card-img-top w-50" style="height: 10rem;" alt="...">
+                        </div>
+                        <div class="card-body h-50 py-0">
+                            <h5 class="card-title"><%#Eval("Nombre") %></h5>
+                            <div class="d-flex flex-column">
+                                <detail class="card-text mb-2"><%#Eval("Descripcion") %></detail>
+                            </div>
+                        </div>
+                        <div class="card-footer p-0 text-center d-none">
+                            <asp:Button ID="BtnPremio" Text="Seleccionar" CssClass="btn btn-primary m-2" runat="server" Enabled="false" />
+                        </div>
+                    </div>
+                </ItemTemplate>
+            </asp:Repeater>
+        </div>
+    </div>
 </asp:Content>

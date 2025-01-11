@@ -70,6 +70,8 @@
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Premios.aspx" />
+    <Content Include="Registro.aspx" />
+    <Content Include="StyleSheet1.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -98,6 +100,13 @@
     <Compile Include="MasterPage.Master.designer.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
     </Compile>
+    <Compile Include="Registro.aspx.cs">
+      <DependentUpon>Registro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Registro.aspx.designer.cs">
+      <DependentUpon>Registro.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -114,6 +123,10 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\C#\Intensivo\datos\datos.csproj">
+      <Project>{F8F744B5-C8F5-41C7-8DC5-CB6B889C51CE}</Project>
+      <Name>datos</Name>
+    </ProjectReference>
     <ProjectReference Include="..\domino\domino.csproj">
       <Project>{98754DA7-BF4B-406E-9A8C-ADC968289FC6}</Project>
       <Name>domino</Name>

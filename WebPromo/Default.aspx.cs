@@ -13,7 +13,7 @@ namespace WebPromo
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         protected void btnValidar_Click(object sender, EventArgs e)
@@ -28,12 +28,14 @@ namespace WebPromo
                 LabelCodeValidator.Text = "segui participando mi rei";
             } else if (voucherExistente.FechaCanje != null)
             {
-                LabelCodeValidator.Text = "es correcto";
+                LabelCodeValidator.Text = "te durmieron el code perri";
             }
             else
             {
-                LabelCodeValidator.Text = "te durmieron el code perri";
+                LabelCodeValidator.Text = "es correcto";
             }
         }
+
+        
     }
 }

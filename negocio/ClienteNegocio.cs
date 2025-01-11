@@ -29,7 +29,7 @@ namespace negocio
                     Cliente cliente = new Cliente();
 
                     cliente.Id = (int)datos.Reader["Id"];
-                    cliente.Documento = (int)datos.Reader["Documento"];
+                    cliente.Documento = (string)datos.Reader["Documento"];
                     cliente.Nombre = (string)datos.Reader["Nombre"];
                     cliente.Apellido = (string)datos.Reader["Apellido"];
                     cliente.Email = (string)datos.Reader["Email"];
@@ -65,7 +65,7 @@ namespace negocio
             finally { datos.cerrarConexion(); }
         }
 
-        public Cliente comparar(int dni)
+        public Cliente comparar(string dni)
         {
             List<Cliente> clientes = Listar();
             return clientes.FirstOrDefault(cliente => cliente.Documento == dni);
