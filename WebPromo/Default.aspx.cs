@@ -13,11 +13,17 @@ namespace WebPromo
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
         }
-
+        
         protected void btnValidar_Click(object sender, EventArgs e)
         {
+            Page.Validate();
+            if (!Page.IsValid)
+            {
+                return;
+            }
+            
             string codigo = TextBoxCode.Text;
             VoucherNegocio voucher = new VoucherNegocio();
             Vouchers voucherExistente = new Vouchers();
@@ -25,10 +31,22 @@ namespace WebPromo
             voucherExistente = voucher.comparar(codigo);
             if (voucherExistente == null)
             {
-                LabelCodeValidator.Text = "segui participando mi rei";
-            } else if (voucherExistente.FechaCanje != null)
+                string script = @" 
+                <script type='text/javascript'> 
+                    document.getElementById('miElemento').classList.add('active'); 
+                </script>";
+                ClientScript.RegisterStartupScript(this.GetType(), "CambiarOpacidad", script, false);
+                LabelError.Text = "El codigo no es valido";
+
+            }
+            else if (voucherExistente.FechaCanje != null)
             {
-                LabelCodeValidator.Text = "te durmieron el code perri";
+                string script = @" 
+                <script type='text/javascript'> 
+                    document.getElementById('miElemento').classList.add('active'); 
+                </script>";
+                ClientScript.RegisterStartupScript(this.GetType(), "CambiarOpacidad", script, false);
+                LabelError.Text = "El codigo ya fue utilizado.";
             }
             else
             {
@@ -37,6 +55,13 @@ namespace WebPromo
             }
         }
 
-        
+        protected void Unnamed_Click(object sender, EventArgs e)
+        {
+            string script = @" 
+                <script type='text/javascript'> 
+                    document.getElementById('miElemento').classList.remove('active');
+                </script>"; 
+            ClientScript.RegisterStartupScript(this.GetType(), "Unnamed_Click", script, false);
+        }
     }
 }

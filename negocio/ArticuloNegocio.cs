@@ -43,11 +43,9 @@ namespace negocio
                     art.Categoria.Id = (int)datos.Reader["IdCategoria"];
                     art.Categoria.Descripcion = (string)datos.Reader["Categoria"];
 
-                    if (!(datos.Reader["UrlImagen"] is DBNull))
-                    {
-                        art.UrlImagen = new Imagenes();
-                        art.UrlImagen.UrlImagen = (string)datos.Reader["UrlImagen"];
-                    }
+                    ImagenesNegocio imagenes = new ImagenesNegocio();
+                    List<Imagenes> listaImagen = imagenes.Listar(art.Id);
+                    art.UrlImagenes = listaImagen;
 
                     lista.Add(art);
                 }

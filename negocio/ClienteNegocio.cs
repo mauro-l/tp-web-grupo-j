@@ -47,23 +47,24 @@ namespace negocio
             finally { datos.cerrarConexion(); }
         }
 
-        public void agregar(Cliente newClient)
+        public int agregar(Cliente newClient)
         {
             try
-            {
-                datos.SetearDatos("insert into Clientes(Documento, Nombre, Apellido, Email, Direccion, Ciudad, CP) values(@doc, @nombre, @apellido, @email, @dire, @ciudad, @cp)");
-                datos.SetearParametros("@doc", newClient.Documento);
-                datos.SetearParametros("@nombre", newClient.Nombre);
-                datos.SetearParametros("@apellido", newClient.Apellido);
-                datos.SetearParametros("@email", newClient.Email);
-                datos.SetearParametros("@dire", newClient.Direccion);
-                datos.SetearParametros("@ciudad", newClient.Ciudad);
-                datos.SetearParametros("@cp", newClient.CP);
-                datos.EjecutarAccionDatos();
+            {                
+                datos.SetearDatos("agregarCliente");
+                datos.SetearParametros("@Documento", newClient.Documento);
+                datos.SetearParametros("@Nombre", newClient.Nombre);
+                datos.SetearParametros("@Apellido", newClient.Apellido);
+                datos.SetearParametros("@Email", newClient.Email);
+                datos.SetearParametros("@Direccion", newClient.Direccion);
+                datos.SetearParametros("@Ciudad", newClient.Ciudad);
+                datos.SetearParametros("@CP", newClient.CP);
+                return datos.EjecutarAccion();
             }
             catch (Exception ex) { throw ex; }
             finally { datos.cerrarConexion(); }
         }
+
 
         public Cliente comparar(string dni)
         {

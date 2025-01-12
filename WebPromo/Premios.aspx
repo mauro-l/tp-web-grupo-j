@@ -12,7 +12,7 @@
                 <ItemTemplate>
                     <div class="card" style="width: 18rem;">
                         <div class="h-50 p-1 text-center">
-                            <img src="<%#Eval("UrlImagen") %>" class="card-img-top w-50" style="height: 10rem;" alt="...">
+                            <img src="<%#Eval("UrlImagenes[0]") %>" class="card-img-top w-50" style="height: 10rem;" alt="...">
                         </div>
                         <div class="card-body h-50 py-0">
                             <h5 class="card-title"><%#Eval("Nombre") %></h5>

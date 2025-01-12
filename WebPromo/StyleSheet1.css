@@ -1,6 +1,4 @@
-﻿body {
-}
-
+﻿
 .code-title {
     font-size: 1.8rem;
     font-weight: 600;
@@ -9,4 +7,30 @@
 .code-title.active {
     color: lawngreen;
     font-size: 2rem;
+}
+
+.mimodal-visible {
+    transition: all 1.3s ease !important;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%);
+    margin: 0 auto;
+    display: none;
+}
+.mimodal-visible:before {
+    content: " ";
+    position: absolute;
+    top: -380%;
+    left: -300%;
+    width: 100vw;
+    height: 100vh;
+    background-color: transparent;
+}
+
+/*.mimodal-invisible {
+    opacity: 0 !important; 
+}*/
+.mimodal-visible.active {
+    display: block;
 }

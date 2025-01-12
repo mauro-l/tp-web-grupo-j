@@ -35,7 +35,7 @@ namespace WebPromo
         }
         protected void BtnDoc_Click(object sender, EventArgs e)
         {
-            string documento = TextBoxDoc.Text;
+            string documento = TextBoxDoc.Text.ToString() ;
             ClienteNegocio clienteNegocio = new ClienteNegocio();
             Cliente documentoCliente = new Cliente();
             documentoCliente = clienteNegocio.comparar(documento);
@@ -72,14 +72,12 @@ namespace WebPromo
                     newClient.Nombre = InputRegisNombre.Text;
                     newClient.Apellido = InputRegisApellido.Text;
                     newClient.Email = InputRegisMail.Text;
-                    newClient.Documento = InputRegisDni.Text;
+                    newClient.Documento = InputRegisDni.Text.ToString();
                     newClient.Direccion = InputRegisDire.Text;
                     newClient.Ciudad = InputRegisCiudad.Text;
                     newClient.CP = int.Parse(InputRegisCP.Text);
 
-                    clienteNegocio.agregar(newClient);
-                    Cliente porvisional = clienteNegocio.comparar(newClient.Documento);
-                    idCliente = porvisional.Id.ToString();
+                    idCliente = clienteNegocio.agregar(newClient).ToString();                    
                 }
 
                 newVoucher.CodigoVoucher = codigoVoucher;

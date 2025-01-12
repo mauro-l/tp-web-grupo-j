@@ -16,6 +16,7 @@ namespace domino
         public Marcas Marca { get; set; }
         public Categorias Categoria { get; set; }
         public Imagenes UrlImagen { get; set; }
+        public List<Imagenes> UrlImagenes { get; set; } = new List<Imagenes>();
 
     }
 }

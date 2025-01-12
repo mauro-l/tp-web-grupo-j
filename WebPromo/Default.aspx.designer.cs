@@ -15,6 +15,24 @@ namespace WebPromo
     {
 
         /// <summary>
+        /// Control LabelError.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelError;
+
+        /// <summary>
+        /// Control Unnamed.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Unnamed;
+
+        /// <summary>
         /// Control Label1.
         /// </summary>
         /// <remarks>
@@ -24,15 +42,6 @@ namespace WebPromo
         protected global::System.Web.UI.WebControls.Label Label1;
 
         /// <summary>
-        /// Control LabelCodeValidator.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelCodeValidator;
-
-        /// <summary>
         /// Control TextBoxCode.
         /// </summary>
         /// <remarks>
@@ -40,6 +49,15 @@ namespace WebPromo
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextBoxCode;
+
+        /// <summary>
+        /// Control LabelCodeValidator.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelCodeValidator;
 
         /// <summary>
         /// Control btnValidar.
