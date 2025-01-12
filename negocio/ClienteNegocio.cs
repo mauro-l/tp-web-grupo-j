@@ -70,6 +70,5 @@ namespace negocio
             List<Cliente> clientes = Listar();
             return clientes.FirstOrDefault(cliente => cliente.Documento == dni);
         }
-
     }
 }

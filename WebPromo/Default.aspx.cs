@@ -32,7 +32,8 @@ namespace WebPromo
             }
             else
             {
-                LabelCodeValidator.Text = "es correcto";
+                Session.Add("code", voucherExistente.CodigoVoucher);
+                Response.Redirect("Premios.aspx");
             }
         }
 

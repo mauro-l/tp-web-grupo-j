@@ -57,6 +57,7 @@
                 <div class="col-6">
                     <asp:Button ID="BtnParticipar" OnClick="BtnParticipar_Click" runat="server" CssClass="btn btn-primary col-md-4 mt-2" Text="Participar!" />
                 </div>
+                <asp:Label ID="LabelEnd" runat="server" Text=""></asp:Label>
             </div>
         </div>
 

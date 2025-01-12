@@ -2,8 +2,11 @@
 
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder3" runat="server">
     <div class="col-10 d-flex flex-column justify-content-center mx-auto gap-2">
-
-
+        <%if (user != null){%>
+            <h3>Selecciona un premio!</h3>
+        <%}else {%>
+            <h3>Uno de estos premios puede ser tuyo!</h3>
+        <%} %>
         <div class="container d-flex justify-content-evenly p-4">
             <asp:Repeater ID="RepeaterArt" runat="server">
                 <ItemTemplate>
@@ -17,9 +20,11 @@
                                 <detail class="card-text mb-2"><%#Eval("Descripcion") %></detail>
                             </div>
                         </div>
-                        <div class="card-footer p-0 text-center d-none">
-                            <asp:Button ID="BtnPremio" Text="Seleccionar" CssClass="btn btn-primary m-2" runat="server" Enabled="false" />
-                        </div>
+                        <%if (user != null){%>
+                            <div class="card-footer p-0 text-center">
+                                <asp:HyperLink ID="lnkPremio" CssClass="btn btn-primary m-2" NavigateUrl='<%# "Registro.aspx?premioId=" + Eval("Id") %>' runat="server" Text="Seleccionar" />
+                            </div>
+                        <%}%>
                     </div>
                 </ItemTemplate>
             </asp:Repeater>

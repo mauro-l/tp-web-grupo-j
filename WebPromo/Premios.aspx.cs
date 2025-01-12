@@ -11,13 +11,17 @@ namespace WebPromo
 {
     public partial class Premios : System.Web.UI.Page
     {
+        public string user { get; set; }
         public List<Articulo> ListaArticulo { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
+            user = Session["code"] != null ? Session["code"].ToString() : null;
+
             ArticuloNegocio negocio = new ArticuloNegocio();
             ListaArticulo = negocio.Listar();
             RepeaterArt.DataSource = ListaArticulo;
             RepeaterArt.DataBind();
+
         }
     }
 }

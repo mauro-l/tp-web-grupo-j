@@ -51,9 +51,8 @@ namespace negocio
         {
             try
             {
-                datos.SetearDatos("update Vouchers set IdCliente = @cliente, FechaCanje = @fecha, IdArticulo = @art Where CodigoVoucher = @codigo");
+                datos.SetearDatos("update Vouchers set IdCliente = @cliente, FechaCanje = GETDATE(), IdArticulo = @art Where CodigoVoucher = @codigo");
                 datos.SetearParametros("@cliente", UpdateVoucher.IdCliente);
-                datos.SetearParametros("@fecha", UpdateVoucher.FechaCanje);
                 datos.SetearParametros("@art", UpdateVoucher.IdArticulo);
                 datos.SetearParametros("@codigo", UpdateVoucher.CodigoVoucher);
                 datos.EjecutarAccionDatos();
