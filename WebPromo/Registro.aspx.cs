@@ -35,6 +35,13 @@ namespace WebPromo
         }
         protected void BtnDoc_Click(object sender, EventArgs e)
         {
+            Page.Validate("GrupoBtnDoc");
+
+            if (!Page.IsValid)
+            {
+                return;
+            }
+
             string documento = TextBoxDoc.Text.ToString() ;
             ClienteNegocio clienteNegocio = new ClienteNegocio();
             Cliente documentoCliente = new Cliente();
@@ -60,6 +67,11 @@ namespace WebPromo
 
         protected void BtnParticipar_Click(object sender, EventArgs e)
         {
+            if (!Page.IsValid)
+            {
+                return;
+            }
+
             ClienteNegocio clienteNegocio = new ClienteNegocio();
             Cliente newClient = new Cliente();
             VoucherNegocio voucherNegocio = new VoucherNegocio();
