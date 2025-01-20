@@ -1,48 +1,60 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="WebPromo.Default1" %>
 
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <script> 
-        const myModal = document.getElementById('myModal')
-        const myInput = document.getElementById('myInput')
-        myModal.addEventListener('shown.bs.modal', () => {
-            myInput.focus()
-        })
-
-    </script>
 </asp:Content>
-
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    
-    <div class="container d-flex flex-column justify-content-around mx-auto overflow-hidden">
-        <div class="col-6 g-3 mx-auto text-center py-4">
-            <div class="mimodal-visible" id="miElemento">
-                <div class="mimodal-invisible"> 
-                    <div class="card" style="width: 18rem;">
-                        <div class="card-body">
-                            <h5 class="card-title">Error</h5>
-                            <asp:Label ID="LabelError" CssClass="card-text" runat="server" Text=""></asp:Label>
-                            <a href="#" class="card-link">Volver</a>
-                            <asp:Button Text="cerrar" runat="server" CssClass="btn btn-secondary" OnClick="Unnamed_Click" ID="Unnamed" />
+
+    <div class="d-flex w-100 mx-4">
+        <div>
+            <img src="Assets\pngegg.png" class="serpentinas" alt="" />
+            <div class="d-flex flex-column hero">
+                <picture class="position-relative">
+                    <img src="Assets\THRIVE.png" style="width:800px;" alt="" />
+                </picture>
+                <asp:Button Text="Participar!" runat="server" OnClick="BtnParticipar_Click" CssClass="d-block btn btn-secondary" ID="BtnParticipar" />
+            </div>
+        </div>        
+        <div>
+            <img src="Assets\pngegg (1).png" class="serpentinas2" alt="" />
+            <div class="premios">
+                <img src="Assets\mochila.jpg" class="premio-mochila" alt="" />
+                <img src="Assets\mouse.jpg" class="premio-mouse" alt="" />
+                <img src="Assets\teclado.jpg" class="premio-teclado" alt="" />
+            </div>
+
+            <div class="circle-container">
+                <h2 class="text-title">Por la compra de cualquier producto de las marcas participantes,
+          recibe un voucher para participar de un fabuloso sorteo!
+                </h2>
+                <div class="d-flex justify-content-center gap-3">
+                    <div class="text-center">
+                        <span class="rounded-circle fondo-azul px-3 py-2 fs-1 text-light"><i class="bi bi-cart-plus"></i></span>
+                        <div>
+                            <p class="texto-iconos">Comprá nuestros</p>
+                            <br />
+                            <p class="texto-iconos">productos</p>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <span class="rounded-circle fondo-azul px-3 py-2 fs-1 text-light"><i class="bi bi-receipt-cutoff"></i></span>
+                        <div>
+                            <p class="texto-iconos">Ingresá el codigo</p>
+                            <br />
+                            <p class="texto-iconos">de tu factura!</p>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <span class="rounded-circle fondo-azul px-3 py-2 fs-1 text-light"><i class="bi bi-gift"></i></span>
+                        <div>
+                            <p class="texto-iconos">Seleccioná el premio</p>
+                            <br />
+                            <p class="texto-iconos">y participá!</p>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <div aria-describedby="helpBlock">
-                <div class="col-auto">
-                    <asp:Label ID="Label1" runat="server" Text="Ingrese el codigo"  CssClass="code-title active"></asp:Label>
-                </div>
-                <div class="col-4 py-2 mx-auto">
-                    <asp:TextBox ID="TextBoxCode" runat="server" CssClass="form-control" MaxLength="10"></asp:TextBox>
-                    <asp:Label ID="LabelCodeValidator" for="TextBoxCode" runat="server" CssClass="text-danger" Text=""></asp:Label>
-                    <asp:RequiredFieldValidator ErrorMessage="El campo es requerido" ControlToValidate="TextBoxCode" runat="server" />
-
-                </div>
-                <div class="col-auto pt-2">
-                    <asp:Button ID="btnValidar" OnClick="btnValidar_Click" CssClass="btn btn-primary mb-3" Text="Validar Codigo" runat="server" />
-                </div>
-            </div>
-            <detail id="helpBlock" class="form-text">Ingrese su codigo promocional para desbloquear las recompensas</detail>
         </div>
     </div>
+   
 </asp:Content>

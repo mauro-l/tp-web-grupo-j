@@ -9,6 +9,10 @@
     font-size: 2rem;
 }
 
+.code-title.active:after {
+    content: '✅'
+}
+
 .mimodal-visible {
     transition: all 1.3s ease !important;
     position: absolute;
@@ -28,9 +32,6 @@
     background-color: transparent;
 }
 
-/*.mimodal-invisible {
-    opacity: 0 !important; 
-}*/
 .mimodal-visible.active {
     display: block;
 }

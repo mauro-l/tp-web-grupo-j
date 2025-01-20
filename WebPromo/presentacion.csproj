@@ -67,11 +67,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\mochila.jpg" />
+    <Content Include="Assets\mouse.jpg" />
+    <Content Include="Assets\pngegg %281%29.png" />
+    <Content Include="Assets\pngegg.png" />
+    <Content Include="Assets\teclado.jpg" />
+    <Content Include="Assets\THRIVE.png" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="Participar.aspx" />
     <Content Include="Premios.aspx" />
     <Content Include="Registro.aspx" />
     <Content Include="StyleSheet1.css" />
+    <Content Include="StyleSheet2.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -84,6 +92,13 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Participar.aspx.cs">
+      <DependentUpon>Participar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Participar.aspx.designer.cs">
+      <DependentUpon>Participar.aspx</DependentUpon>
     </Compile>
     <Compile Include="Premios.aspx.cs">
       <DependentUpon>Premios.aspx</DependentUpon>

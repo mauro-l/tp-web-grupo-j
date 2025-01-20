@@ -15,53 +15,10 @@ namespace WebPromo
         {
             
         }
-        
-        protected void btnValidar_Click(object sender, EventArgs e)
-        {
-            Page.Validate();
-            if (!Page.IsValid)
-            {
-                return;
-            }
-            
-            string codigo = TextBoxCode.Text;
-            VoucherNegocio voucher = new VoucherNegocio();
-            Vouchers voucherExistente = new Vouchers();
-            
-            voucherExistente = voucher.comparar(codigo);
-            if (voucherExistente == null)
-            {
-                string script = @" 
-                <script type='text/javascript'> 
-                    document.getElementById('miElemento').classList.add('active'); 
-                </script>";
-                ClientScript.RegisterStartupScript(this.GetType(), "CambiarOpacidad", script, false);
-                LabelError.Text = "El codigo no es valido";
 
-            }
-            else if (voucherExistente.FechaCanje != null)
-            {
-                string script = @" 
-                <script type='text/javascript'> 
-                    document.getElementById('miElemento').classList.add('active'); 
-                </script>";
-                ClientScript.RegisterStartupScript(this.GetType(), "CambiarOpacidad", script, false);
-                LabelError.Text = "El codigo ya fue utilizado.";
-            }
-            else
-            {
-                Session.Add("code", voucherExistente.CodigoVoucher);
-                Response.Redirect("Premios.aspx");
-            }
-        }
-
-        protected void Unnamed_Click(object sender, EventArgs e)
+        protected void BtnParticipar_Click(object sender, EventArgs e)
         {
-            string script = @" 
-                <script type='text/javascript'> 
-                    document.getElementById('miElemento').classList.remove('active');
-                </script>"; 
-            ClientScript.RegisterStartupScript(this.GetType(), "Unnamed_Click", script, false);
+            Response.Redirect("Participar.aspx");
         }
     }
 }
